@@ -1,27 +1,42 @@
-A CDN starter template using [Static Web Server](https://github.com/static-web-server/static-web-server).
+# cdn for discoverygubbio.com
 
-> You can follow the full tutorial from [here](https://docs.wasmer.io/edge/tutorials/cdn)
+this repository hosts static files used as a simple **cdn** for the website [discoverygubbio.com](https://discoverygubbio.com). it includes videos, images, scripts, and other static assets that are served directly to the website visitors for faster loading and better performance.
 
-## Usage
+## how to use the cdn
 
-All the static files will be served from the `public` folder, and the static webserver will be configured using the `config.toml` file.
+files can be referenced directly from your website. examples:
 
-You can run the CDN template easily using Wasmer (check out the [install guide](https://docs.wasmer.io/install)):
-
-```bash
-wasmer run .
+**video:**
+```
+<video width="100%" controls>
+  <source src="https://gablilli.github.io/cdn/public/video_basilica.mp4" type="video/mp4">
+  your browser does not support the video tag.
+</video>
 ```
 
-Open [http://localhost:8080](http://localhost:8080) with your browser to see the CDN.
+## deployment
 
-## Deploy on Wasmer Edge
+to update the cdn with new files or videos:
 
-The easiest way to serve your public assets is to use the [Wasmer Edge](https://wasmer.io/products/edge) as your CDN.
+    add new files to your local repository, keeping filenames simple (no spaces or special characters).
 
-Live example: https://cdn-wasmer-starter.wasmer.app/
+    stage and commit the files:
+    ```
+    git add .
+    git commit -m "add new cdn assets"
+    ```
 
-Run this commmand to deploy to Wasmer Edge:
+    pull remote changes to avoid conflicts:
+    ```
+    git pull origin main --rebase
+    ```
+    push your changes:
+    ```
+    git push origin main
+    ```
 
-```bash
-wasmer deploy
-```
+> note: when using mp4 videos on github pages, ensure the mime type is correct. if issues occur, renaming .mp4 to .mp4v files can sometimes help.
+
+## license
+this repository is released under the mit license. (see also [LICENSE.md](/license.md))
+> this repo is designed to support discoverygubbio.com as a free and fast cdn for its static assets.
