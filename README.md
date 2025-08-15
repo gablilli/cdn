@@ -1,2 +1,2 @@
 # this repo has been moved
-## just go [here](github.com/discoverygubbio/cdn)
+## just go [here](https://github.com/discoverygubbio/cdn)
